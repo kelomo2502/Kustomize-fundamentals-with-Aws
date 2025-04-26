@@ -1,4 +1,6 @@
-bases:
-  - ../../base # Path to the base configuration directory
-patchesStrategicMerge:
-  - replica_count.yaml # List of patches to apply to the base resources
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+patches:
+- path: replica_count.yaml

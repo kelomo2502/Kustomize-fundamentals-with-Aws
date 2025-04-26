@@ -120,7 +120,7 @@ Step 4: Deploying Kustomize Configurations to EKS
 2. Apply Configuration to EKS:
 - Select the appropriate overlay for your deployment environment. For example, if deploying to a development environment, you might choose the dev  overlay.
 - Run the following command from the root of your project directory:
-`kubectl apply -k overlays/dev/`
+`kustomize build ~/Kustomize-fundamentals-with-Aws/overlays/dev | kubectl apply -f -`
 - This applies the configurations defined in your dev overlay to the EKS cluster.
 
 Step 5: Verify Deployment
