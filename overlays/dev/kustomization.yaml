@@ -1,0 +1,4 @@
+bases:
+  - ../../base # Path to the base configuration directory
+patchesStrategicMerge:
+  - replica_count.yaml # List of patches to apply to the base resources

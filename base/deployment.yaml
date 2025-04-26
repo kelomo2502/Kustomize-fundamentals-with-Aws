@@ -1,0 +1,19 @@
+   apiVersion: apps/v1    # API version for the deployment object
+   kind: Deployment       # Specifies that this is a Deployment
+   metadata:
+   name: nginx-deployment  # Name of the deployment
+   spec:                   # Specification of the deployment
+   replicas: 2           # Number of replicas (pods running)
+   selector:             # Selector to identify the pods
+       matchLabels:
+       app: nginx
+   template:             # Template for the pod creation
+       metadata:
+       labels:
+           app: nginx     # Label applied to the pod
+       spec:
+       containers:      
+       - name: nginx    # Name of the container
+           image: nginx:1.14.2  # Docker image to use for the container
+           ports:
+           - containerPort: 80  # Port the container will expose
